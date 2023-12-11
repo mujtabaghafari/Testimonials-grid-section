@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: hsl(210, 46%, 95%);
+    color: hsl(0, 0%, 100%);
+    padding: 20px;
+}
+.grid-container{
+    max-width: 1200px;
+    width: 100%;
+    display: grid;  
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+.span-2{
+    grid-column: span 2;
+}
+.grid-items{
+    background-color: rebeccapurple;
+    border-radius: 6px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.item-3{
+    grid-row-start: span 2;
+    /* grid-column-start: 4; */
+}
+.top img{
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid hsl(0, 0%, 100%);
+    margin-right: 20px;
+}
+.top{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.quote{
+    height: 100%;
+    width: 100%;
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 3%;
+    right: -67%;
+    z-index: -1;
+}
+.top .position{
+    opacity: .5;
+}
+.grid-items .info-about-me h3{
+    font-size: 1.4em;
+    margin-top: 15px;
+    font-weight: 600;
+    z-index: 1;
+}
+.info-about-me-2{
+    margin-top: 20px;
+    opacity: .7;
+    font-size: 13px;
+}
+.grid-items:nth-child(1){
+    background: hsl(263, 55%, 52%);
+}
+.grid-container .grid-items:nth-child(2){
+    background: hsl(217, 19%, 35%);
+}
+.grid-container .grid-items:nth-child(3){
+    background: hsl(0, 0%, 100%);
+    color: hsl(219, 29%, 14%);
+}
+.grid-container .grid-items:nth-child(4){
+    background: hsl(0, 0%, 100%);
+    color: hsl(219, 29%, 14%);
+}
+.grid-container .grid-items:nth-child(5){
+    background: hsl(219, 29%, 14%);
+}
+@media (max-width: 950px){
+    .grid-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 535px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+    }
+    .grid-items{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .item-4{
+        grid-row: 3 / 4;
+    }
+    .item-3{
+        grid-row: 5 / 5;
+    }
+    .grid-items .info-about-me h3{
+        font-size: 1.4em;
+    }
+    .info-about-me-2{
+        opacity: .7;
+        font-size: 15px;
+    }
+    .quote{
+        height: 90%;
+        width: 90%;
+        background-image: url(./images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 3%;
+        right: -50%;
+        z-index: -1;
+    }
+}
